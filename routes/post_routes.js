@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Post = require('../controllers/post')
-router.get('/',Post.getPosts)
+router.get('/',Post.getAllPosts)
+router.post('/', Post.addNewPosts)
 
 module.exports = router
