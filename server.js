@@ -19,8 +19,5 @@ app.use('/',indexRouter)
 const postRouter = require('./routes/post_routes')
 app.use('/post',postRouter)
 
-const authRouter = require('./routes/auth_routes')
-app.use('/auth',authRouter)
-
 module.exports = app
 

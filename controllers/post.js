@@ -30,7 +30,7 @@ const addNewPost = async(req, res, next)=>{
 
     const post = new Post({
         message:req.body.message,
-        sender:eq.body.sender
+        sender:req.body.sender
     })
 
     try{
