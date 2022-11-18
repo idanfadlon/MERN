@@ -43,5 +43,17 @@ const addNewPost = async(req, res, next)=>{
     }     
 }
 
+const updatePostById = async (req, res)=>{
+    try{
+        const post = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.status(200).send(post)
+    }catch (err){
+        console.log("fail to update post in db")
+        res.status(400).send({'error': 'fail adding the updated post to db'})
+    }
+}
 
-module.exports ={getAllPosts, addNewPost, getPostById}
+
+
+
+module.exports ={getAllPosts, addNewPost, getPostById,  updatePostById}
